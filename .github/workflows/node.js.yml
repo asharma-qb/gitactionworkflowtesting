@@ -39,19 +39,11 @@ jobs:
         run: npm run build --if-present
       - name: Run test
         run: npm test
-      - name: set default working directory to build
+      - name: run test
         run: npm test
-        # Share artifact inside workflow
-      - name: Share artifact inside workflow
-        uses: actions/upload-artifact@v1
-        with:
-          name: deploy
-          path: build
-      # Download previously shared build
-      - name: Get artifact
-        uses: actions/download-artifact@v1
-        with:
-          name: deploy
+      - name: Create folder
+        run: |
+          mkdir deploy
       - name: run npm build dist command to copy files from build folder
         run: npm run build-dist
         working-directory: deploy
