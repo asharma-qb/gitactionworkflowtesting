@@ -5,49 +5,53 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ['master']
   pull_request:
-    branches: [ "master" ]
+    branches: ['master']
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-     
-    - name: install ci cd
-      run: npm ci
-    - name: Restore node_modules from cache
-      uses: actions/cache@v2
-      with:
-        path: |
-          node_modules
-          */*/node_modules
-        key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}         
-    - name: Install dependencies
-      run: npm run build --if-present  
-    - name: Run test
-      run: npm test
-    - name: set default working directory to build
-      run: npm test      
-      # Share artifact inside workflow
-    - name: Share artifact inside workflow
-      uses: actions/upload-artifact@v1
-      with:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: install ci cd
+        run: npm ci
+      - name: Restore node_modules from cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: npm run build --if-present
+      - name: Run test
+        run: npm test
+      - name: set default working directory to build
+        run: npm test
+        # Share artifact inside workflow
+      - name: Share artifact inside workflow
+        uses: actions/upload-artifact@v1
+        with:
           name: deploy
           path: build
-    - name: run npm build dist command to copy files from build folder
-      run: npm run build-dist
-      working-directory: deploy
+      # Download previously shared build
+      - name: Get artifact
+        uses: actions/download-artifact@v1
+        with:
+          name: deploy
+      - name: run npm build dist command to copy files from build folder
+        run: npm run build-dist
+        working-directory: deploy
