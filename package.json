@@ -14,7 +14,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-dist": "cd build && copy /b static\\js\\main*.js ..\\deploy\\main.js && copy /b static\\css\\main*.css ..\\deploy\\main.css ",
+    "build-dist": "cp static\\js\\main*.js ..\\deploy\\main.js && cp static\\css\\main*.css ..\\deploy\\main.css ",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
