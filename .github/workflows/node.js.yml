@@ -47,6 +47,8 @@ jobs:
       - name: run npm build dist command to copy files from build folder
         run: npm run build-dist
         working-directory: deploy
-      - name: curl
+      - name: deployqb
         run: |
-             curl -X POST -H 'Content-type:application/xml' -H 'QUICKBASE-ACTION: API_AddReplaceDBPage'  -d '<qdbapi><pagename>GithubActionFlowsTesting.js</pagename><pagetype>1</pagetype><pagebody><![CDATA[<html> <head></head><body> Hello World</body></html>]]></pagebody><usertoken>b7j53i_mzif_0_z4jfim5dptx9cknc59rbf7shi4</usertoken></qdbapi>' https://demo.quickbase.com/db/bsqih8822 HTTP/1.0    
+          sudo npm install -g deployqb
+          deployqb init ['bsrb9fvi6','att','dzpnst5dxwq3pdbuivbaybiuqp9x','b7j53i_ntdu_0_b2yunpcddmg9pjd58g7kvdnhtrfs','665','','ATNT-GITHUB_ACTION_Prod','','no']
+          deployab feat
