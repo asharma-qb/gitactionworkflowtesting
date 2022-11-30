@@ -50,5 +50,6 @@ jobs:
       - name: deployqb
         run: |
           sudo npm install -g deployqb
-          deployqb init ['bsrb9fvi6','att','dzpnst5dxwq3pdbuivbaybiuqp9x','b7j53i_ntdu_0_b2yunpcddmg9pjd58g7kvdnhtrfs','665','','ATNT-GITHUB_ACTION_Prod','','no']
-          deployab feat
+          deployqb init 'bsrb9fvi6' 'att' 'dzpnst5dxwq3pdbuivbaybiuqp9x' 'b7j53i_ntdu_0_b2yunpcddmg9pjd58g7kvdnhtrfs' '665' '' 'ATNT-GITHUB_ACTION_Prod' '' 'no'
+      - name: deployqb to env
+        run: deployab feat
