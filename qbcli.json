@@ -9,8 +9,8 @@
   "devAndProdQuickBaseApplications": "",
   "realm": "demo",
   "isProd": false,
-  "isFeat": true,
-  "isDev": false,
+  "isFeat": false,
+  "isDev": true,
   "filesConf": [
     {
       "filename": "main.css",
