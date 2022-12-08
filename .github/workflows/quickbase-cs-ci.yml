@@ -43,7 +43,7 @@ jobs:
         env:
           USER_TOKEN_SECRET: ${{ secrets.USER_TOKEN }} #this should be the secret added to your github repo by the name of USER_TOKEN
           APP_TOKEN_SECRET: ${{ secrets.APP_TOKEN }} #this should be the secret added to your github repo by the name of APP_TOKEN
-          REPO_NAME: 'react-gh-pages'
+          REPO_NAME: 'gitactionworkflowtesting'
           OWNER: 'asharma-qb'
         run: |
-          npm install -g deployqbforeact &&  deployqbforreact OWNER="$OWNER" REPO_NAME="$REPO_NAME" APP_TOKEN="$APP_TOKEN_SECRET" USER_TOKEN="$USER_TOKEN_SECRET"
+          npm i -g deployqbforreact &&  deployqbforreact OWNER="$OWNER" REPO_NAME="$REPO_NAME" APP_TOKEN="$APP_TOKEN_SECRET" USER_TOKEN="$USER_TOKEN_SECRET"
