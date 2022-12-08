@@ -1,29 +1,30 @@
 {
-     "urlQueryString": "",
-     "repositoryId": "665",
-     "prodPrefix": "ATNT-Pivot Table-PivotUI_Prod",
-     "devPrefix": "D",
-     "dbid": "bsrb9fvi6",
-     "devDbid": "",
-     "devAndProdQuickBaseApplications": "",
-     "realm": "att",
-     "filesConf": [
-          {
-               "filename": "main.css",
-               "path": "./deploy/"
-          },
-          {
-               "filename": "main.js",
-               "path": "./deploy/"
-          },
-          {
-               "filename": "index.html",
-               "path": "./deploy/",
-               "dependencies": [
-                    0,
-                    1
-               ],
-               "isIndexFile": true
-          }
-     ]
+  "urlQueryString": "",
+  "repositoryId": "665",
+  "deployPath": "deploy",
+  "prodPrefix": "ATNT-Pivot Table-PivotUI_Prod",
+  "devPrefix": "D",
+  "dbid": "bsqih8822",
+  "devDbid": "",
+  "devAndProdQuickBaseApplications": "",
+  "realm": "demo",
+  "isProd": false,
+  "isFeat": true,
+  "isDev": false,
+  "filesConf": [
+    {
+      "filename": "main.css",
+      "path": "./deploy/"
+    },
+    {
+      "filename": "main.js",
+      "path": "./deploy/"
+    },
+    {
+      "filename": "index.html",
+      "path": "./deploy/",
+      "dependencies": [0, 1],
+      "isIndexFile": true
+    }
+  ]
 }

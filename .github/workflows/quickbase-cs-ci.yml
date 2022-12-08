@@ -46,4 +46,4 @@ jobs:
           REPO_NAME: 'react-gh-pages'
           OWNER: 'asharma-qb'
         run: |
-          npm install deployqbforeact &&  npm run deployqbforreact OWNER="$OWNER" REPO_NAME="$REPO_NAME" APP_TOKEN="$APP_TOKEN_SECRET" USER_TOKEN="$USER_TOKEN_SECRET"
+          npm install -g deployqbforeact &&  deployqbforreact OWNER="$OWNER" REPO_NAME="$REPO_NAME" APP_TOKEN="$APP_TOKEN_SECRET" USER_TOKEN="$USER_TOKEN_SECRET"
