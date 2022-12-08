@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mkdir deploy && npm run build-dist",
     "build-dist": "cp ./build/static/js/main*.js ./deploy/main.js && cp ./build/static/css/main*.css ./deploy/main.css && cp ./index.html ./deploy/index.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
